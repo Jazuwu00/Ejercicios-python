@@ -36,10 +36,27 @@
 
 '''1.4 Desarrollar un programa que solicite el ingreso de un numero real. Luego el programa debera mostrar la descomposicion del numero real en su parte entera y parte decimal'''
 
-
+""" 
 x = float(input("Ingrese numero : "))
 entero=int(x)
 decimal= x-int(x)
 
 print("Los resultados para ",x, " son: ")
 print("Parte entera: ",entero,"\nParte decimal: ",decimal)
+ """
+ 
+
+
+
+
+import random
+def saludo(val):
+    msjA="Hola"
+    msjB="Chau"
+    res= msjA*(val)+ msjB*(1-val)
+    return res
+
+def main():
+    ale=random.randint(0,1)
+    print(saludo(ale))
+main()

@@ -35,22 +35,46 @@ dichos numeros ingresados.'''
 
 
 
-x = int(input("Ingrese el multiplicando : "))
+from cmath import pi
+import math
 
-y = int(input("Ingrese el multiplicador : "))
+# x = int(input("Ingrese el multiplicando : "))
 
-
-while x < 99  :
-    while y < 99:
-        print('Ingrese valores entre 100 y 1000')
-        x = int(input("Ingrese el multiplicando : "))
-        y = int(input("Ingrese el multiplicador : "))
+# y = int(input("Ingrese el multiplicador : "))
 
 
+#  while True: 
+#      if x>99 and x < 1000 and y> 99 and y < 1000:
+#          break;
+#      print('Ingrese valores entre 100 y 1000')
+#      x = int(input("Ingrese el multiplicando : "))
+#      y = int(input("Ingrese el multiplicador : "))
 
-def producto(x, y):
-    restultado=x * y
+
+
+#  def producto(x, y):
+#     restultado=x * y
     
-    return print( ' {:8d}'.format(x) ,'\n*{:8d}'.format(y) ,'\n----------\n', '{:8d}'.format(restultado))
+#      return print( ' {:8d}'.format(x) ,'\n*{:8d}'.format(y) ,'\n----------\n', '{:8d}'.format(restultado))
      
-producto(x,y)
+#  producto(x,y)
+
+
+""" 2.3.	Programar las funciones areaCirc, areaCuad y areaNegra .
+areaCirc recibe como parámetro el radio de un círculo y calcula y retorna el área del mismo. areaCuad recibe como parámetro el lado de un cuadrado y calcula y retorna el área del mismo.
+areaNegra recibe como parámetro el lado de un cuadrado de una figura (como la dada a continuación) y calcula y retorna el área negra resultante.
+Luego utilizar las funciones en un programa que solicitará al usuario el lado del cuadrado y mostrará por pantalla el valor correspondiente para el área de color negra (Ver figura) y además indicará el porcentaje que éste área representa con respecto al área total del cuadrado. """
+
+def areaCirc (radio):
+    return math.pi * (radio * radio)
+    
+def areaCuad (lado):
+    return lado * lado
+    
+def areaNegra (lado):
+    diG= lado *2/3
+    diC= lado *1/3
+    area= areaCuad(lado)- areaCirc(diG/2)- (2* areaCirc(diC/2))
+    return area
+
+print("El area negra es " , areaNegra(12) , "% y es un " ,( ),"% del area total del cuadrado" );
